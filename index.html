@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="/dot.png">
+	<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+	<title>Dots Experiment</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#name").val("First Name");
+			$("#name").focus(function(){
+				if($("#name").val() == "First Name"){
+					$("#name").val("");
+				}
+			});
+			$("#start").click(function(){
+				if($("#name").val() != "" && $("#name").val() != "First Name"){
+					window.location = "/test.php?name=" + $("#name").val();
+				}else{
+					alert("Please enter your name.");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="centered">
+		<div id="title-holster">
+			<div id="title-desc">Take part in the</div>
+			<div id="title">D<img id="dot" width="49" height="48" src="dot.png"/>TS Experiment</div>
+		</div>
+		<div id="content">
+			<p> <strong>About:</strong> This test is to determine if there is a correlation between the color of dots and your ability to count them quickly. <br>
+				<strong>The Test:</strong>  There will be 10 periods, each lasting 6 seconds. Within each period, count the number of dots you see and enter that number in the bottom right box. You do not need to hit enter or click a button, as long as the number is entered before the time runs out, it will be counted.<br>
+				<br>
+				To begin, enter your name and click start below.
+			</p>
+			<br><br><br>
+			<input id="name" type="text"/>
+			<div id="start" class="button">Start</div>
+		</div>
+	</div>
+</body>
+</html>
